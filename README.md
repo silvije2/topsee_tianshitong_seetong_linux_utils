@@ -168,13 +168,13 @@ This means any device on the LAN can passively collect credentials from all came
 
 **No cameras found**
 - Check firewall: `sudo iptables -I INPUT -p udp --dport 3001 -j ACCEPT`
-- Try subnet broadcast: `--broadcast 192.168.2.255`
+- Try subnet broadcast: `--broadcast 192.168.1.255`
 - Increase timeout: `--timeout 15 --repeat 8`
 - Verify cameras are on same subnet as your machine
 
 **TCP/ONVIF enrichment fails**
 - Check that port 8091 and 80 are reachable from your machine
-- The tool tries `admin/` (blank), `admin/admin`, `admin/123456`, `admin/12345` plus any credentials found in the UDP response
+- The tool tries `admin/` (blank), `admin/admin`, `admin/123456` plus any credentials found in the UDP response
 - Use `--verbose` to see raw XML and diagnose auth issues
 
 **`Permission denied` on startup**
